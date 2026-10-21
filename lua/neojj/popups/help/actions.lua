@@ -91,7 +91,10 @@ end
 
 M.actions = function()
   return present {
-    { "Discard", "Discard", NONE },
+    { "Discard", "Discard selection", NONE },
+    { "SplitSelection", "Split selection", NONE },
+    { "CommitSelection", "Commit selection", NONE },
+    { "SquashSelection", "Squash selection into parent", NONE },
   }
 end
 
