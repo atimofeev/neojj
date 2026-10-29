@@ -13,6 +13,15 @@ Expand a changed file with `<Tab>`. All four commands work in normal and visual 
 
 The existing commit (`c`), squash (`s`) and undo (`u`) popups remain unchanged.
 
+Help (`?`) separates **Revisions (cursor)**, **Bookmarks (cursor)**,
+**Selected changes (files)** and **Navigation**. These are scope labels, not
+additional selection modes: revision/bookmark actions remain normal-mode
+commands, while chunk commands accept cursor or visual selection. On a recent
+change, `x` appears as **Abandon change** under revisions; on a local bookmark,
+it appears as **Delete bookmark** or **Restore bookmark from origin**. On a
+remote bookmark, `F` reads **Track remote bookmark** and unsupported `x` deletion
+is omitted. Other groups remain visible as a keybinding reference.
+
 Normal mode selects the complete hunk under the cursor, including when the
 cursor is on a context line. A file header selects the entire file. The files
 section header selects all changed files. Folded file/hunk headers work without

@@ -950,15 +950,17 @@ end
 ---@return fun(): nil
 M.n_help_popup = function(self)
   return popups.open("help", function(p)
-    local section = self.buffer.ui:get_selection().section
-    local section_name
-    if section then
-      section_name = section.name
-    end
-
+    local section = self.buffer.ui:get_current_section()
+    local section_name = section and section.options.section
+    local item = self.buffer.ui:get_item_under_cursor()
     local ref = self.buffer.ui:get_commit_under_cursor() or self.buffer.ui:get_yankable_under_cursor()
 
     p {
+      context = {
+        section = section_name,
+        remote = item and item.remote,
+        deleted = item and item.deleted,
+      },
       bookmark = {},
       change = {},
       commit = {},

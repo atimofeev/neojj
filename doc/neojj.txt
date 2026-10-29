@@ -270,6 +270,16 @@ the available options with their defaults: >lua
 
 All mappings can be customized via `require("neojj").setup({ mappings = ... })`.
 
+Help (`?`) groups status shortcuts by scope: Revisions (cursor), Bookmarks
+(cursor), Selected changes (files), and Navigation. Revision/bookmark actions
+remain normal-mode commands; selected-change commands also accept visual
+selection. Groups remain visible as a keybinding reference.
+
+In normal-mode help, `x` is listed with the applicable scope: discard files,
+abandon a recent change, or delete/restore a local bookmark. Remote bookmark
+rows show `F` as Track remote bookmark and omit unsupported `x` deletion.
+This grouping changes help labels only, not command bindings or behavior.
+
 STATUS BUFFER ~
                                                     *neojj-mappings-status*
   Key            Action ~
