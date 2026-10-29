@@ -51,7 +51,7 @@ function M.select(ui, visual, root, commit)
                 return node.options.hunk ~= nil
               end)
               if component then
-                local hunk = component.options.hunk
+                local hunk = assert(component.options.hunk, "Selected component has no hunk")
                 local header = component:row_range_abs()
                 if not visual or row == header then
                   chosen[hunk] = true

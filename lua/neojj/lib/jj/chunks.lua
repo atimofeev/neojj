@@ -6,7 +6,7 @@ local plugin_root = vim.fn.fnamemodify(source, ":p:h:h:h:h:h")
 ---@param selection table
 ---@param operation string
 ---@param message string|nil
----@return ProcessResult
+---@return ProcessResult|nil
 function M.run(selection, operation, message)
   assert(vim.tbl_contains({ "discard", "split", "commit", "squash" }, operation), "Invalid chunk operation")
   local jj = require("neojj.lib.jj")
